@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Like Status</title>
+	<style type="text/css">
+	#wrapper{
+    padding: 30px;
+    }
+	table{
+	border-collapse: collapse;
+	width: 400px;
+	}
+	tr,td,th{
+	border: 2px solid black;
+	}
+	.head{
+	background-color: #B6B9BA;
+	}
+	.post_content{
+      border: 2px solid black;
+      width: 400px;
+      padding: 5px;
+    }
+    .index{
+      display: inline-block;
+      margin-left: 500px;
+    }
+    .logout{
+      display: inline-block;
+      margin-left: 7px;
+      
+    }
+
+	</style>
+</head>
+<body>
+<div id="wrapper">
+<div class="index"><a href="/bright_ideas">Bright Ideal</a></div>
+<div class="logout"><a href="/sessions/out">Log Out</a></div>
+
+<div class="ideas_content">
+<p><a href="/users/<%= @post.user.id%>"><%= @post.user.alias%></a> says: <div class="post_content"><%= @post.content %></div></p>
+
+</div>
+
+<div class="like_lists"> 
+<h3>People who liked this post:</h3>
+<table>
+	<tr class="head">
+		<th>Alias</th>
+		<th>Name</th>
+	</tr>
+	<% @like.each do |like|%>
+	<tr>
+		<td><a href="/users/<%= like.user.id%>"><%= like.user.alias%></a></td>	
+		<td><%= like.user.name%></td>
+		</tr>
+	<% end %>
+</table>
+	
+</div>	
+</div>
+</body>
+</html>

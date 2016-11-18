@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile</title>
+  <style type="text/css">
+  #wrapper{
+    padding: 30px;
+    }
+  .index{
+    display: inline-block;
+    margin-left: 500px;
+  }
+  .logout{
+    display: inline-block;
+    margin-left: 7px;   
+  }
+  </style>
+</head>
+<body>
+<div id="wrapper">
+<div class="index"><a href="/bright_ideas">Bright Ideal</a></div>
+<div class="logout"><a href="/sessions/out">Log Out</a></div>
+
+  <p>
+    <label>Name: </label>
+    <%= @user.name %>
+  </p>
+   <p>
+    <label>Ailas: </label>
+    <%= @user.alias %>
+  </p>
+  <p>
+    <label>Email: </label>
+    <%= @user.email %>
+  </p>  
+<hr>
+<div>
+  <p>Total Number of Posts: <%= @count_posts %></p>
+  <p>Total Numbet of Likes: <%= @count_likes %></p>
+</div>
+</div>
+</form>
+</body>
+</html>
