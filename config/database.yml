@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: BrightIdeas_production
-  username: ubuntu
+  username: project_user
   password: <%= ENV['BRIGHTIDEAS_DATABASE_PASSWORD'] %>
